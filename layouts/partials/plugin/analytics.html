@@ -10,17 +10,8 @@
         dataLayer.push(arguments);
     }
     gtag('js', new Date());
-    gtag('config', '{{ . }}' {
-        {
-            if $analytics.google.anonymizeIP
-        }
-    }, {
-        'anonymize_ip': true
-    } {
-        {
-            end
-        }
-    });
+
+    gtag('config', 'G-LVWZGSZ04Z');
 </script>
 {{- printf "https://www.googletagmanager.com/gtag/js?id=%v" . | dict "Async" true "Source" | partial "plugin/script.html" -}}
 {{- end -}}
@@ -72,15 +63,15 @@
 
 {{- /* Baidu Analytics */ -}}
 {{- with $analytics.baidu.id -}}
-<script>
-    var _hmt = _hmt || [];
-    (function () {
-        var hm = document.createElement("script");
-        hm.src = "https://hm.baidu.com/hm.js?{{ . }}";
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(hm, s);
-    })();
-</script>
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?{{ . }}";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
 {{- end -}}
 
 {{- end -}}
